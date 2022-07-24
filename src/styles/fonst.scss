@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'TradeGothic LT CondEighteen';
+    src: local('Trade Gothic LT Condensed No. 18'), local('TradeGothicLT-CondEighteen'),
+        url('../fonts/TradeGothicLT-CondEighteen.eot') format('embedded-opentype'),
+        url('../fonts/TradeGothicLT-CondEighteen.woff') format('woff'),
+        url('../fonts/TradeGothicLT-CondEighteen.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TradeGothic LT CondEighteen';
+    src: local('Trade Gothic LT Bold Condensed No. 20'), local('TradeGothicLT-BoldCondTwenty'),
+        url('../fonts/TradeGothicLT-BoldCondTwenty.eot') format('embedded-opentype'),
+        url('../fonts/TradeGothicLT-BoldCondTwenty.woff') format('woff'),
+        url('../fonts/TradeGothicLT-BoldCondTwenty.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'HelveticaNeueCyr';
+	src: local('HelveticaNeueCyr-Medium'),
+		url('../fonts/HelveticaNeueCyr-Medium.eot') format('embedded-opentype'),
+		url('../fonts/HelveticaNeueCyr-Medium.woff') format('woff'),
+		url('../fonts/HelveticaNeueCyr-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+

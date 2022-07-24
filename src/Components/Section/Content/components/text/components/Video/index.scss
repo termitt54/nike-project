@@ -1,0 +1,41 @@
+@import 'src/styles/variables';
+
+.video {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  &__btn {
+    position: relative;
+    width: 100%;
+    max-width: 5.6rem;
+    height: 5.6rem;
+
+    border-radius: 50%;
+    background-color: rgba($primary, 0.05);
+
+    margin-right: 2.4rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+
+        top: 50%;
+        transform: translateY(-50%);
+        left: 2.3rem;
+
+        border: 10px solid transparent;
+        border-left: 14px solid rgba($primary, 0.5);
+
+    }
+  }
+
+  &__text {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: $primary;
+  }
+}

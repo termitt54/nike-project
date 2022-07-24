@@ -1,0 +1,44 @@
+@import 'src/styles/variables';
+
+.radio-size {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  &__wrapper {
+    width: 100%;
+    max-width: 4.8rem;
+    height: 4.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__decorator {
+    cursor: pointer;
+    width: 100%;
+    max-width: 4.8rem;
+    height: 4.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba($primary, 0.1);
+
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'HelveticaNeueCyr', serif;
+  }
+
+  &__input:checked + &__decorator {
+    background-color: rgba($primary, 0.5);
+  }
+}

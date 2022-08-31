@@ -1,0 +1,48 @@
+.size {
+  display: flex;
+  width: 100%;
+  max-width: 32rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  margin-bottom: 4.8rem;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    margin-bottom: 2.8rem;
+  }
+
+  &__wrapper {
+    width: 100%;
+    max-width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  &__radio {
+    display: none;
+  }
+
+  &__decorator {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 4.8rem;
+    height: 4.8rem;
+
+    border: 1px solid rgba(19, 18, 18, 0.1);
+
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: "HelveticaNeueCyr", sans-serif;
+  }
+
+  &__radio:checked + &__decorator {
+    background-color: rgba(19, 18, 18, 0.5);
+  }
+}

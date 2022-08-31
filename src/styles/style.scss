@@ -1,5 +1,4 @@
-@import "./fonst.scss";
-@import "./variables.scss";
+@import "./fonts.scss";
 
 * {
   box-sizing: border-box;
@@ -10,55 +9,79 @@ h2,
 h3,
 h4,
 h5,
-p,
+ul,
+li,
 a,
-li {
-  margin: 0;
-}
-
-#root {
-  display: flex;
-  justify-content: center;
-}
-
-html {
-  font-size: 10px;
+p {
   padding: 0;
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
+  padding: 0;
   margin: 0;
-  font-family: "TradeGothic LT CondEighteen", serif;
-  background-color: $main-color;
+}
+
+html {
+  font-size: 10px;
+  font-family: "TradeGothic LT CondEighteen", sans-serif;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  background-color: rgba(246, 246, 246, 1);
+  padding-top: 6rem;
 }
 
 .App {
   width: 100%;
-  max-width: 192rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 6rem 12rem 0 12rem;
-}
-
-a {
-  text-decoration: none;
-  color: $primary;
+  max-width: 168rem;
 }
 
 .btn {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 
   background-color: transparent;
   border: none;
-  cursor: pointer;
   padding: 0;
+  font-family: "TradeGothic LT CondEighteen", sans-serif;
+
+  &_account,
+  &_cart {
+    width: 100%;
+    max-width: 3.6rem;
+    height: 3.6rem;
+
+    &:hover {
+      transform: scale(1.5);
+      transition: all 0.3s ease;
+    }
+  }
+
+  &_cart {
+    position: relative;
+  }
+
+  &_close {
+    width: 100%;
+    max-width: 25rem;
+    min-height: 4rem;
+    font-size: 2rem;
+    font-weight: 700;
+    border: 1px solid black;
+    border-radius: 2rem;
+    margin-left: auto;
+  }
 
   &__count {
     position: absolute;
@@ -66,100 +89,139 @@ a {
     align-items: center;
     justify-content: center;
 
-    top: -1rem;
-    right: -0.8rem;
+    top: -0.5rem;
+    right: -0.5rem;
 
-    width: 2.4rem;
+    width: 100%;
+    max-width: 2.4rem;
     height: 2.4rem;
+    background-color: red;
 
-    background-color: $red;
     border-radius: 50%;
 
-    color: $white;
-    font-size: 1.8rem;
-    font-weight: 600;
-    font-family: "serif";
+    font-family: "HelveticaNeueCyr", sans-serif;;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
   }
 
-  &_prev,
-  &_next {
+  &__empty {
+    display: none;
+  }
+
+  &_next,
+  &_prev {
     position: relative;
     width: 100%;
-    min-width: 5.9rem;
+    max-width: 5.9rem;
     height: 4.4rem;
 
-    align-items: start;
+    align-items: flex-start;
 
     font-size: 2rem;
     font-weight: 700;
-    font-family: "TradeGothic LT CondEighteen", serif;
     text-transform: uppercase;
 
     &::before {
       content: "";
-      position: absolute;
       display: block;
+      position: absolute;
 
-      bottom: 0.5rem;
+      bottom: 0.7rem;
       left: 0;
 
       width: 100%;
       height: 0.2rem;
 
-      background-color: $black;
+      background-color: black;
     }
   }
 
-  &_prev {
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
+  &_next::after {
+    content: "";
+    display: block;
+    position: absolute;
 
-      bottom: 0;
-      left: -1.2rem;
+    bottom: -0.2rem;
+    right: -1.2rem;
 
-      border: 6px solid transparent;
-      border-right: 12px solid $black;
-    }
+    border: 10px solid transparent;
+    border-left: 10px solid black;
   }
 
-  &_next {
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
+  &_prev::after {
+    content: "";
+    display: block;
+    position: absolute;
 
-      bottom: 0;
-      right: -1.2rem;
+    bottom: -0.2rem;
+    left: -1.2rem;
 
-      border: 6px solid transparent;
-      border-left: 12px solid $black;
-    }
+    border: 10px solid transparent;
+    border-right: 10px solid black;
   }
 
   &_buy {
-    min-width: 20.4rem;
-    height: 4.4rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
 
+    padding: 1rem;
+
+    &:hover {
+      box-shadow: 0 0 15px black;
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &_play {
+    position: relative;
+    width: 100%;
+    max-width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 50%;
+    background-color: rgba(19, 18, 18, 0.05);
+    margin-right: 2.4rem;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+  
+      top: 50%;
+      left: 2.3rem;
+      transform: translateY(-50%);
+   
+      border: 10px solid transparent;
+      border-left: 12px solid rgba(19, 18, 18, 0.5);
+    }
+  }
+
+  &_scroll {
+    position: absolute;
+
+    left: -5rem;
+    bottom: 5rem;
 
     font-size: 2.4rem;
     font-weight: 700;
-    font-family: "TradeGothic LT CondEighteen", serif;
     text-transform: uppercase;
+    transform: rotate(270deg);
   }
 }
 
-.icon {
+.no-empty {
+  display: none;
+}
+
+.empty {
   width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &_user {
-    max-width: 3rem;
-    height: 3rem;
-  }
-
-  &_basket {
-    max-width: 2.7rem;
-    height: 3.15rem;
-  }
+  font-size: 8rem;
+  font-weight: 700;
 }

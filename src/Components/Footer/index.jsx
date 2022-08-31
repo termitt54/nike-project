@@ -1,16 +1,25 @@
 import React from "react";
-import FooterButton from "./components/FooterButton";
-import Buy from "./components/FooterBuy";
+import './index.scss';
 
-import "./index.scss";
+export const Footer = ({card, addItem, colorValue, sizeValue}) => {
+    const addItemToCart = (e) => {
+        const newItem = e
+        addItem(newItem)
+      }
 
-const Footer = () => {
+      let price = card.price
+      let title = card.title
+      let color = colorValue
+      let size = sizeValue
+      let picture = card.picture
+
     return (
         <section className="footer">
-            <FooterButton/>
-            <Buy/>
+            <div className="footer__bar">
+                <button className="btn btn_prev">prev</button>
+                <button className="btn btn_next">next</button>
+            </div>
+            <button onClick={(e) => addItemToCart({price, title, color, size, picture})} className="btn btn_buy">add to cart — ${card.price}</button>
         </section>
     )
 }
-
-export default Footer;
